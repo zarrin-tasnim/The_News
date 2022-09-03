@@ -63,6 +63,8 @@ const displayNewsDetails = (newsDetails) => {
         <h4> ${newsDetails.length} items found for category Entertainment </h4>
     `;
     toggleSpinner(true);
+
+    newsDetails.sort(function (a, b) { return b.total_view - a.total_view });
     newsDetails.forEach(element => {
 
         console.log(element);

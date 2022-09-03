@@ -60,18 +60,108 @@
     <!-- Header Ends Here -->
 
     <!-- News thumbnails Start Here -->
-    <main class="container">
+    <main class="container newsDetailsArea">
         <section>
-           
+            <div class="row">
+                <div class="col-12">
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                    aria-controls="flush-collapseOne">
+                                    What is the difference between var, let & const?
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">var variables can be updated and re-declared within its
+                                    scope;<br>
+
+                                    let variables can be updated but not re-declared;
+                                    <br>const
+                                    variables can neither be updated nor re-declared. They are all hoisted to the top of
+                                    their scope. But while var
+                                    variables are initialized with undefined , let and const variables are not
+                                    initialized.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                    aria-controls="flush-collapseTwo">
+                                    What is the difference between arrow function and regular function?
+                                </button>
+                            </h2>
+                            <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Regular functions created using function declarations or
+                                    expressions are constructible and callable. Since regular
+                                    functions are constructible, they can be called using the new keyword. However, the
+                                    arrow functions are only callable
+                                    and not constructible, i.e arrow functions can never be used as constructor
+                                    functions.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                    aria-controls="flush-collapseThree">
+                                    What is the difference between map,foreach, filter and find?
+                                </button>
+                            </h2>
+                            <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body"> The function forEach(), is used to execute the same code on
+                                    every element in an array but does not change the array and it returns
+                                    undefined.<br>
+                                    Function .map() is a manipulative function that can modify each element’s content in
+                                    an array that it is called on. This
+                                    function returns a new array with modified values, the array that it is called on
+                                    will stay still.<br>
+                                    Function .filter() is a search function that returns all the elements that fulfil
+                                    the assigned condition.<br>
+                                    Function .find() is also a search function like the previous but they differ in one
+                                    small detail — this function returns
+                                    only one match in an array. If in an array is more than one result, the function
+                                    will return the first that has matched.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseFour" aria-expanded="false"
+                                    aria-controls="flush-collapseFour">
+                                    Why do we use template string in Javascript?
+                                </button>
+                            </h2>
+                            <div id="flush-collapseFour" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body"> Template strings are a powerful feature of modern JavaScript released in ES6. It lets us insert/interpolate variables
+                                and expressions into strings without needing to concatenate like in older versions of JavaScript. It allows us to create
+                                strings that are complex and contain dynamic elements.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <!-- News thumbnails End Here -->
     <!-- Footer Area starts here -->
-    <footer>
-        <div class=" text-center  p-5">
-            <p>Copyright &copy; 2022 News Portal.</p>
-        </div>
-    </footer>
+    <section class="">
+        <footer>
+            <div class=" text-center  p-5 mt-3 bg-dark text-success">
+                <p>Copyright &copy; 2022 News Portal.</p>
+            </div>
+        </footer>
+    </section>
     <!-- Footer Area ends here -->
 
     <!-- Js bundle  -->
