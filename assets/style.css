@@ -12,3 +12,7 @@
     width: 200px;
     height: 40px;
 }
+
+.newsDetailsArea {
+    min-height: 320px;
+}

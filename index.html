@@ -60,11 +60,11 @@
     <!-- Header Ends Here -->
 
     <!-- Main design related news Start Here -->
-    <main class="container">
+    <main class="container newsDetailsArea">
         <section>
             <!-- Numbers of catergory result found messages -->
             <div id="numberOfCategory" class="text-start p-3 m-2 bg-white">
-                <h4> items found for category Entertainment </h4>
+
             </div>
 
             <!-- Category result sorted -->
@@ -88,24 +88,34 @@
                 </div>
             </div>
         </section>
-
+        <!-- Loader -->
+        <section id="loader" class="d-none">
+            <div style="height: 300px;" class="d-flex justify-content-center align-items-center">
+                <div class="spinner-grow text-success" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </section>
         <!-- News details start here -->
         <section class="containerNewsDetails mt-5  w-75 ms-auto me-auto p-3">
             <div class="row row-cols-1 row-cols-md-1 g-2">
-                <div class="col"  id="card-container">
-                    
+                <div class="col" id="card-container">
+
                 </div>
 
             </div>
         </section>
+
     </main>
     <!-- Main design related news End Here -->
     <!-- Footer Area starts here -->
-    <footer>
-        <div class=" text-center  p-5 mt-3">
-            <p>Copyright &copy; 2022 News Portal.</p>
-        </div>
-    </footer>
+    <section class="">
+        <footer>
+            <div class=" text-center  p-5 mt-3 bg-dark text-success">
+                <p>Copyright &copy; 2022 News Portal.</p>
+            </div>
+        </footer>
+    </section>
     <!-- Footer Area ends here -->
 
     <!-- Js bundle  -->

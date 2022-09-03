@@ -53,9 +53,18 @@ const displayNewsDetails = (newsDetails) => {
     const categoryNameText = categoryName.innerText;
     const categoryDetailsContainer = document.getElementById('card-container');
     categoryDetailsContainer.textContent = '';
+
+    // number of news in a category will show here
+
+    const numberOfCategoryFound = document.getElementById('numberOfCategory');
+    numberOfCategoryFound.innerHTML = `
+        <h4> ${newsDetails.length} items found for category Entertainment </h4>
+    `;
+
+    toggleSpinner(true);
     newsDetails.forEach(element => {
 
-        console.log(element);
+        // console.log(element);
 
         const card = document.createElement('div');
         card.classList.add("card", "mb-3", "rounded");
@@ -69,7 +78,7 @@ const displayNewsDetails = (newsDetails) => {
                                 <div class="card-body">
                                     <h5 class="card-title">${element.title}</h5>
                                     <p class="card-text text-muted"
-                                        style="max-width: 290px;">${element.details.length > 50 ? element.details.slice(0, 100) + '...' : element.details}
+                                        style="max-width: 290px;">${element.details.length > 100 ? element.details.slice(0, 100) + '...' : element.details}
                                         </p>
                                     <div class="row d-flex justify-content-between align-items-center p-2 mt-3">
                                         <div class="col-5 d-flex justify-content-start align-items-center">
@@ -81,7 +90,7 @@ const displayNewsDetails = (newsDetails) => {
                                             <h6 id="viewarsNUmber" class="p-2 mt-1">${element.total_view}</h6>
                                         </div>
                                          <div class="col-4  d-flex justify-content-center align-items-center ">
-                                            <i class="fa-regular fa-eye p-1"></i>
+                                          <i class="fa-sharp fa-solid fa-arrow-right text-success"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -92,7 +101,22 @@ const displayNewsDetails = (newsDetails) => {
         categoryDetailsContainer.appendChild(card);
 
     });
+    toggleSpinner(false);
+}
 
+
+//for spninner
+const toggleSpinner = isLoading => {
+    const spinnerSection = document.getElementById('loader');
+
+    if (isLoading) {
+
+        spinnerSection.classList.remove('d-none');
+
+    }
+    else {
+        spinnerSection.classList.add('d-none');
+    }
 }
 
 loadNews();
