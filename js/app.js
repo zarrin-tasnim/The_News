@@ -65,7 +65,7 @@ const displayNewsDetails = (newsDetails) => {
     toggleSpinner(true);
     newsDetails.forEach(element => {
 
-        // console.log(element);
+        console.log(element);
 
         const card = document.createElement('div');
 
@@ -77,18 +77,18 @@ const displayNewsDetails = (newsDetails) => {
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
-                                    <h5 class="card-title">${element.title}</h5>
+                                    <h5 class="card-title">${element.title ? element.title : 'No Title'}</h5>
                                     <p class="card-text text-muted"
                                         style="max-width: 290px;">${element.details.length > 100 ? element.details.slice(0, 100) + '...' : element.details}
                                         </p>
                                     <div class="row d-flex justify-content-between align-items-center p-2 mt-3">
                                         <div class="col-md-5 col-sm-12 d-flex justify-content-start align-items-center">
-                                            <img src="${element.author.img}" class="rounded-circle me-2" alt="..." style="width: 50px;">
-                                            <h6 id="author'sName">${element.author.name}</h6>
+                                            <img src="${element.author.img ? element.author.img : 'No images'}" class="rounded-circle me-2" alt="..." style="width: 50px;">
+                                            <h6 id="author'sName">${element.author.name ? element.author.name : 'No name'}</h6>
                                         </div>
                                         <div class="col-md-3 col-sm-6  d-flex justify-content-center align-items-center ">
                                             <i class="fa-regular fa-eye p-1"></i>
-                                            <h6 id="viewarsNUmber" class="p-2 mt-1">${element.total_view}</h6>
+                                            <h6 id="viewarsNUmber" class="p-2 mt-1">${element.total_view ? element.total_view : 'No views'}</h6>
                                         </div>
                                          <div class="col-md-4 col-sm-6  d-flex justify-content-center align-items-center ">
                                          <button onclick ="loadNewsDEtailsModal('${element._id}')" href="#" class="btn btn-white" data-bs-toggle="modal" data-bs-target="#showDetailsModal">   <i class="fa-sharp fa-solid fa-arrow-right text-success"></i></button>
@@ -145,16 +145,21 @@ const displayNewsDetailsModal = (newsDetails) => {
                                         </p>
                                     <div class="row d-flex justify-content-between align-items-center p-2 mt-3">
                                         <div class="col-md-12 col-sm-12 d-flex justify-content-around align-items-center">
-                                            <img src="${newsDetails.author.img}" class="rounded-circle me-2" alt="..." style="width: 50px;">
-                                            <h6 id="author'sName" class="p-2">${newsDetails.author.name}</h6>
-                                            <h6 class="ms-2" id="author'sName">Published date: ${newsDetails.author.published_date}</h6>
+                                            <div>
+                                            <img src="${newsDetails.author.img ? newsDetails.author.img : 'No image found'}" class="rounded-circle me-2" alt="..." style="width: 60px;">
+                                            </div>
+
+                                           <div>
+                                            <h6 id="author'sName" class="p-2">${newsDetails.author.name ? newsDetails.author.name : 'No author name found'}</h6>
+                                            <h6 class="ms-2" id="author'sName">Published date: ${newsDetails.author.published_date ? newsDetails.author.published_date : 'No published date found'}</h6>
+                                           </div>
                                         </div>
                                         <div class="col-md-12 col-sm-6  d-flex justify-content-center align-items-center ">
                                             <i class="fa-regular fa-eye p-1"></i>
-                                            <h6 id="viewarsNUmber" class="p-2 mt-1">${newsDetails.total_view}</h6>
+                                            <h6 id="viewarsNUmber" class="p-2 mt-1">${newsDetails.total_view ? newsDetails.total_view : 'No views'}</h6>
                                         </div>
                                         <div class="col-md-12 col-sm-6  d-flex justify-content-center align-items-center ">
-                                            <h6 id="" class="p-2 mt-1">Authors rating : ${newsDetails.rating.number}</h6>
+                                            <h6 id="" class="p-2 mt-1">Authors rating : ${newsDetails.rating.number ? newsDetails.rating.number : 'No ratings'}</h6>
                                         </div>
                                     </div>
                                 </div>
