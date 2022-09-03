@@ -1,5 +1,5 @@
 
-const loadNews = async () => {
+const loadNews = async (id, categoryName) => {
     const url = ` https://openapi.programming-hero.com/api/news/categories`;
 
     const res = await fetch(url);
@@ -34,7 +34,9 @@ const displayNews = (news) => {
 const loadNewsDEtails = async (id) => {
     try {
 
+        toggleSpinner(true);
         const url = `https://openapi.programming-hero.com/api/news/category/0${id}`;
+
         const res = await fetch(url);
         const data = await res.json();
         displayNewsDetails(data.data);
@@ -62,12 +64,12 @@ const displayNewsDetails = (newsDetails) => {
     numberOfCategoryFound.innerHTML = `
         <h4> ${newsDetails.length} items found for category Entertainment </h4>
     `;
-    toggleSpinner(true);
+
 
     newsDetails.sort(function (a, b) { return b.total_view - a.total_view });
     newsDetails.forEach(element => {
 
-        console.log(element);
+        // console.log(element);
 
         const card = document.createElement('div');
 
@@ -143,7 +145,7 @@ const displayNewsDetailsModal = (newsDetails) => {
                             <div class="col-md-8">
                                 <div class="card-body">
                                     <p class="card-text text-muted"
-                                        style="max-width: 290px;">${newsDetails.details.length > 100 ? newsDetails.details.slice(0, 100) + '...' : element.details}
+                                        style="max-width: 290px;">${newsDetails.details}
                                         </p>
                                     <div class="row d-flex justify-content-between align-items-center p-2 mt-3">
                                         <div class="col-md-12 col-sm-12 d-flex justify-content-around align-items-center">
@@ -188,3 +190,4 @@ const toggleSpinner = isLoading => {
 }
 
 loadNews();
+loadNewsDEtails(01);

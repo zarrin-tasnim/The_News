@@ -1,5 +1,16 @@
+/* nav design */
 .navbar-nav .nav-link {
     color: black !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: rgb(138, 56, 56) !important;
+    font-size: 1.4rem;
+}
+
+.brand-style {
+    background-color: black;
+    color: white;
 }
 
 .bg-white {
@@ -13,6 +24,13 @@
     height: 40px;
 }
 
+/* Main container height  */
 .newsDetailsArea {
     min-height: 320px;
+}
+
+
+
+.blogDetailsArea {
+    min-height: 380px;
 }
