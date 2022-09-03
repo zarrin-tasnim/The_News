@@ -33,10 +33,12 @@ const displayNews = (news) => {
 //clicking news category show details
 const loadNewsDEtails = async (id) => {
     try {
+
         const url = `https://openapi.programming-hero.com/api/news/category/0${id}`;
         const res = await fetch(url);
         const data = await res.json();
         displayNewsDetails(data.data);
+
     }
     catch (error) {
         console.log(error);
@@ -60,14 +62,13 @@ const displayNewsDetails = (newsDetails) => {
     numberOfCategoryFound.innerHTML = `
         <h4> ${newsDetails.length} items found for category Entertainment </h4>
     `;
-
     toggleSpinner(true);
     newsDetails.forEach(element => {
 
         // console.log(element);
 
         const card = document.createElement('div');
-        card.classList.add("card", "mb-3", "rounded");
+
         card.innerHTML = `
             <div class="card mb-3 rounded" style="max-width: 800px;">
                         <div class="row g-0">
@@ -81,15 +82,15 @@ const displayNewsDetails = (newsDetails) => {
                                         style="max-width: 290px;">${element.details.length > 100 ? element.details.slice(0, 100) + '...' : element.details}
                                         </p>
                                     <div class="row d-flex justify-content-between align-items-center p-2 mt-3">
-                                        <div class="col-5 d-flex justify-content-start align-items-center">
+                                        <div class="col-md-5 col-sm-12 d-flex justify-content-start align-items-center">
                                             <img src="${element.author.img}" class="rounded-circle me-2" alt="..." style="width: 50px;">
                                             <h6 id="author'sName">${element.author.name}</h6>
                                         </div>
-                                        <div class="col-3  d-flex justify-content-center align-items-center ">
+                                        <div class="col-md-3 col-sm-6  d-flex justify-content-center align-items-center ">
                                             <i class="fa-regular fa-eye p-1"></i>
                                             <h6 id="viewarsNUmber" class="p-2 mt-1">${element.total_view}</h6>
                                         </div>
-                                         <div class="col-4  d-flex justify-content-center align-items-center ">
+                                         <div class="col-md-4 col-sm-6  d-flex justify-content-center align-items-center ">
                                           <i class="fa-sharp fa-solid fa-arrow-right text-success"></i>
                                         </div>
                                     </div>
